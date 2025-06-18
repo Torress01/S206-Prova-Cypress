@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-06-18T17:18:25.059Z",
+    "end": "2025-06-18T17:18:28.953Z",
+    "duration": 3894,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1e59b24a-8651-4892-8577-545b9a6829c1",
+      "title": "",
+      "fullFile": "cypress\\e2e\\cenario3_elements.cy.js",
+      "file": "cypress\\e2e\\cenario3_elements.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ad3e6f0a-9620-4255-841c-1b181d6ac8d9",
+          "title": "Cenário 3: Adicionar/Remover Elementos Dinâmicos",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Caso 3.1: Deve adicionar um novo elemento \"Delete\"",
+              "fullTitle": "Cenário 3: Adicionar/Remover Elementos Dinâmicos Caso 3.1: Deve adicionar um novo elemento \"Delete\"",
+              "timedOut": null,
+              "duration": 1247,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('button[onclick=\"addElement()\"]').click();\ncy.get(\".added-manually\").should(\"have.length\", 1);\ncy.get(\".added-manually\").should(\"be.visible\").and(\"contain.text\", \"Delete\");",
+              "err": {},
+              "uuid": "39dcfb46-23dc-44d5-82d1-d8c89abe1a5b",
+              "parentUUID": "ad3e6f0a-9620-4255-841c-1b181d6ac8d9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Caso 3.2: Deve adicionar múltiplos elementos e remover um específico",
+              "fullTitle": "Cenário 3: Adicionar/Remover Elementos Dinâmicos Caso 3.2: Deve adicionar múltiplos elementos e remover um específico",
+              "timedOut": null,
+              "duration": 603,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('button[onclick=\"addElement()\"]').click();\ncy.get('button[onclick=\"addElement()\"]').click();\ncy.get('button[onclick=\"addElement()\"]').click();\ncontarElementosVisiveis(\".added-manually\").should(\"eq\", 3);\ncy.get(\".added-manually\").eq(1).click();\ncontarElementosVisiveis(\".added-manually\").should(\"eq\", 2);",
+              "err": {},
+              "uuid": "712fd12b-bc40-4845-8bad-06b4d8164f80",
+              "parentUUID": "ad3e6f0a-9620-4255-841c-1b181d6ac8d9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Caso 3.3: Negativo - Não deve conseguir remover um elemento inexistente ou já removido",
+              "fullTitle": "Cenário 3: Adicionar/Remover Elementos Dinâmicos Caso 3.3: Negativo - Não deve conseguir remover um elemento inexistente ou já removido",
+              "timedOut": null,
+              "duration": 348,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('button[onclick=\"addElement()\"]').click();\ncontarElementosVisiveis(\".added-manually\").should(\"eq\", 1);\ncy.get(\".added-manually\").eq(1).should(\"not.exist\");\ncontarElementosVisiveis(\".added-manually\").should(\"eq\", 1);\ncy.get(\".added-manually\").eq(0).should(\"be.visible\");",
+              "err": {},
+              "uuid": "ba46b414-25d6-4065-850e-2b5cb6f498e6",
+              "parentUUID": "ad3e6f0a-9620-4255-841c-1b181d6ac8d9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "39dcfb46-23dc-44d5-82d1-d8c89abe1a5b",
+            "712fd12b-bc40-4845-8bad-06b4d8164f80",
+            "ba46b414-25d6-4065-850e-2b5cb6f498e6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2198,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

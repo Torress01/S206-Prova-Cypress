@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-06-18T17:18:19.684Z",
+    "end": "2025-06-18T17:18:23.336Z",
+    "duration": 3652,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a764e9d1-3c32-4542-884d-752232ea9091",
+      "title": "",
+      "fullFile": "cypress\\e2e\\cenario2_checkbox.cy.js",
+      "file": "cypress\\e2e\\cenario2_checkbox.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9e2fd124-3de9-4b2a-a60f-2c59d4a1dccc",
+          "title": "Cenário 2: Interação com Checkboxes",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Caso 2.1: Deve selecionar e deselecionar o primeiro checkbox",
+              "fullTitle": "Cenário 2: Interação com Checkboxes Caso 2.1: Deve selecionar e deselecionar o primeiro checkbox",
+              "timedOut": null,
+              "duration": 1397,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('input[type=\"checkbox\"]').eq(0).as(\"checkbox1\");\nverificarEstadoCheckbox(\"@checkbox1\", false);\ncy.get(\"@checkbox1\").click();\nverificarEstadoCheckbox(\"@checkbox1\", true);\ncy.get(\"@checkbox1\").click();\nverificarEstadoCheckbox(\"@checkbox1\", false);",
+              "err": {},
+              "uuid": "ce6e790b-abac-402b-9147-f08a3fee4a27",
+              "parentUUID": "9e2fd124-3de9-4b2a-a60f-2c59d4a1dccc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Caso 2.2: Deve verificar que o segundo checkbox está inicialmente selecionado",
+              "fullTitle": "Cenário 2: Interação com Checkboxes Caso 2.2: Deve verificar que o segundo checkbox está inicialmente selecionado",
+              "timedOut": null,
+              "duration": 269,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('input[type=\"checkbox\"]').eq(1).as(\"checkbox2\");\nverificarEstadoCheckbox(\"@checkbox2\", true);",
+              "err": {},
+              "uuid": "5ee6f066-4c92-417c-8c0b-e6c0d19108e4",
+              "parentUUID": "9e2fd124-3de9-4b2a-a60f-2c59d4a1dccc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Caso 2.3: Negativo - Não deve conseguir interagir com um checkbox inexistente",
+              "fullTitle": "Cenário 2: Interação com Checkboxes Caso 2.3: Negativo - Não deve conseguir interagir com um checkbox inexistente",
+              "timedOut": null,
+              "duration": 256,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('input[type=\"checkbox\"]').eq(99).should(\"not.exist\");",
+              "err": {},
+              "uuid": "ac74b36b-9594-4cdf-8486-e1b5fd91c93d",
+              "parentUUID": "9e2fd124-3de9-4b2a-a60f-2c59d4a1dccc",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ce6e790b-abac-402b-9147-f08a3fee4a27",
+            "5ee6f066-4c92-417c-8c0b-e6c0d19108e4",
+            "ac74b36b-9594-4cdf-8486-e1b5fd91c93d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1922,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

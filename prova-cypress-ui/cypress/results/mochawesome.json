@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-06-18T17:18:09.716Z",
+    "end": "2025-06-18T17:18:17.723Z",
+    "duration": 8007,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "775418da-d5ec-4523-9125-47b8c9057ed9",
+      "title": "",
+      "fullFile": "cypress\\e2e\\cenario1_login.cy.js",
+      "file": "cypress\\e2e\\cenario1_login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f2b8f734-4378-47ea-8952-a37f31cf2dcc",
+          "title": "Cenário 1: Testes de Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Caso 1.1: Deve realizar o login com sucesso utilizando credenciais válidas",
+              "fullTitle": "Cenário 1: Testes de Login Caso 1.1: Deve realizar o login com sucesso utilizando credenciais válidas",
+              "timedOut": null,
+              "duration": 2735,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const username = \"tomsmith\";\nconst password = \"SuperSecretPassword!\";\ncy.get(\"#username\").type(username);\ncy.get(\"#password\").type(password);\ncy.get(\".fa.fa-2x.fa-sign-in\").click();\ncy.url().should(\"include\", \"/secure\");\ncy.get(\"#flash.success\").should(\"be.visible\").and(\"contain\", \"You logged into a secure area!\");\ncy.get(\".button.secondary.radius\").should(\"be.visible\").and(\"contain\", \"Logout\");",
+              "err": {},
+              "uuid": "ebc08415-9c39-425c-820a-c69791c1be17",
+              "parentUUID": "f2b8f734-4378-47ea-8952-a37f31cf2dcc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Caso 1.2: Negativo - Não deve permitir login com usuário inválido e exibir mensagem de erro",
+              "fullTitle": "Cenário 1: Testes de Login Caso 1.2: Negativo - Não deve permitir login com usuário inválido e exibir mensagem de erro",
+              "timedOut": null,
+              "duration": 1346,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const invalidUsername = `user_${gerarStringAleatoria(5)}`;\nconst validPassword = \"SuperSecretPassword!\";\ncy.get(\"#username\").type(invalidUsername);\ncy.get(\"#password\").type(validPassword);\ncy.get(\".fa.fa-2x.fa-sign-in\").click();\ncy.url().should(\"not.include\", \"/secure\");\ncy.get(\"#flash.error\").should(\"be.visible\").and(\"contain\", \"Your username is invalid!\");",
+              "err": {},
+              "uuid": "37377094-38d1-46f9-9eb5-c80bf5e45e3d",
+              "parentUUID": "f2b8f734-4378-47ea-8952-a37f31cf2dcc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Caso 1.3: Negativo - Não deve permitir login com senha inválida e exibir mensagem de erro",
+              "fullTitle": "Cenário 1: Testes de Login Caso 1.3: Negativo - Não deve permitir login com senha inválida e exibir mensagem de erro",
+              "timedOut": null,
+              "duration": 1285,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const validUsername = \"tomsmith\";\nconst invalidPassword = `pass_${gerarStringAleatoria(5)}`;\ncy.get(\"#username\").type(validUsername);\ncy.get(\"#password\").type(invalidPassword);\ncy.get(\".fa.fa-2x.fa-sign-in\").click();\ncy.url().should(\"not.include\", \"/secure\");\ncy.get(\"#flash.error\").should(\"be.visible\").and(\"contain\", \"Your password is invalid!\");",
+              "err": {},
+              "uuid": "614d86de-f484-4023-9e50-91683be7576e",
+              "parentUUID": "f2b8f734-4378-47ea-8952-a37f31cf2dcc",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ebc08415-9c39-425c-820a-c69791c1be17",
+            "37377094-38d1-46f9-9eb5-c80bf5e45e3d",
+            "614d86de-f484-4023-9e50-91683be7576e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5366,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
